@@ -10,9 +10,9 @@
 # A script to organize directory by first creating two sub directories named smallest and largest.
 # Then the script moves the largest file in the current directory to largest directory and the smallest file to smallest directory.
 
-directory=$1/*
+directory=./*
 
-mkdir -p $1/smallest $1/largest
+mkdir -p ./smallest ./largest
 
 largestSize=0
 smallestSize=-1
@@ -34,9 +34,9 @@ do
 done
 
 if [ -f $smallestFile ]; then
-	mv -i $smallestFile $1/smallest
+	mv -i $smallestFile ./smallest
 fi
 
 if [ -f $largestFile ]; then
-	mv -i $largestFile $1/largest
+	mv -i $largestFile ./largest
 fi
